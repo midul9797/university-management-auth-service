@@ -12,8 +12,8 @@
   },
   "author": "Moklasur Rahman",
   "license": "ISC",
-  "lint-staged":{
-    "src/**/*.ts": "npm lint && npm format"
+  "lint-staged": {
+    "src/**/*.ts": ["npm run lint","npm run format"]
   },
   "devDependencies": {
     "@types/cors": "^2.8.13",
