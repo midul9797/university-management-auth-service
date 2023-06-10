@@ -1,7 +1,7 @@
 import express, { Application } from 'express'
 import cors from 'cors'
 
-import { UserRoutes } from './app/modules/user.route'
+import { UserRoutes } from './app/modules/user/user.route'
 import globalErrorHandler from './app/middlewares/globalErrorHandler'
 const app: Application = express()
 
