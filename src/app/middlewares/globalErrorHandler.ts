@@ -1,9 +1,9 @@
 import { ErrorRequestHandler } from 'express'
-import config from '../../../config'
-import { errorLogger } from '../../../shared/logger'
-import { IGenericErrorMessage } from '../../../interfaces/error'
-import handleValidationError from '../../../errors/handleValidationError'
-import ApiError from '../../../errors/ApiError'
+import config from '../../config'
+import { errorLogger } from '../../shared/logger'
+import { IGenericErrorMessage } from '../../interfaces/error'
+import handleValidationError from '../../errors/handleValidationError'
+import ApiError from '../../errors/ApiError'
 
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   if (config.env === 'development')
