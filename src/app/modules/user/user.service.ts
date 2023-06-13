@@ -4,6 +4,7 @@ import config from '../../../config/index'
 import { generateUserId } from './user.utils'
 import ApiError from '../../../errors/ApiError'
 
+import httpStatus from 'http-status'
 const createUserInDB = async (user: IUser): Promise<IUser | null> => {
   const id = await generateUserId()
   user.id = id
@@ -12,7 +13,7 @@ const createUserInDB = async (user: IUser): Promise<IUser | null> => {
   }
   const createdUser = await User.create(user)
   if (!createdUser) {
-    throw new ApiError(400, 'Failed to create')
+    throw new ApiError(httpStatus.BAD_REQUEST, 'Failed to create')
   }
   return createdUser
 }
